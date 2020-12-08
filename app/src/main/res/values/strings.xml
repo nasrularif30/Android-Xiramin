@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Xiramin</string>
+    <string name="suhu_udara">Suhu Udara</string>
+    <string name="nilai_suhu_udara">30</string>
+    <string name="derajat_celcius">°C</string>
+    <string name="persen">%</string>
+    <string name="nilai_kelembapan_tanah">50</string>
+    <string name="ph_tanah">Ph Tanah</string>
+    <string name="nilai_ph">7</string>
+    <string name="nilai_suhu_air">28</string>
+    <string name="nilai_volume">30</string>
+    <string name="nilai_kelembapan_udara">50</string>
+    <string name="title_home">homeAct</string>
+    <string name="title_login">loginAct</string>
+    <string name="title_register">registerAct</string>
+    <string name="title_splash">SplashScreen</string>
+
+</resources>

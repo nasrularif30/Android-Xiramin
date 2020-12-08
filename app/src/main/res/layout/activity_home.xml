@@ -1,0 +1,489 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/background"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".homeActivity">
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:padding="10dp"
+        app:cardPreventCornerOverlap="true"
+        app:cardCornerRadius="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/xiramin"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/header"
+                android:layout_gravity="center"
+                android:padding="10dp"
+                android:gravity="left"
+                />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:gravity="right">
+                <Button
+                    android:id="@+id/btnLogout"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:gravity="center"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_gravity="center"
+                    android:outlineAmbientShadowColor="@color/white"
+                    android:background="@drawable/logout"/>
+            </LinearLayout>
+
+
+
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <ScrollView
+        android:id="@+id/scroll1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/header"
+        android:layout_above="@+id/footer"
+        android:layout_marginTop="6dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginRight="25dp"
+                    >
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/suhu_udara_card"
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:layout_marginTop="6dp"
+                        android:padding="1dp"
+                        app:cardCornerRadius="@dimen/card_corner">
+                    <TextView
+                        android:id="@+id/suhu_udara"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="5dp"
+                        android:textColor="@color/bgcolor"
+                        android:textSize="20sp"
+                        android:fontFamily="@font/opensanslight"
+                        android:text="@string/suhu_udara" />
+
+                    <TextView
+                        android:id="@+id/nilai_suhu_udara"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margintop_text_nilai"
+                        android:layout_marginLeft="@dimen/marginleft_text_nilai"
+                        android:fontFamily="@font/opensanslight"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:gravity="center"
+                        android:textColor="@color/bgcolor"
+                        android:textSize="@dimen/size_text_nilai"
+
+                        android:text="@string/nilai_suhu_udara" />
+
+                    <TextView
+                        android:id="@+id/satuan_suhu"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="270dp"
+                        android:layout_marginTop="@dimen/margintop_text_nilai"
+                        android:fontFamily="@font/opensanslight"
+                        android:gravity="top"
+                        android:textColor="@color/bgcolor"
+                        android:textSize="@dimen/size_text_nilai"
+                        android:text="@string/derajat_celcius" />
+                    <ImageView
+                        android:id="@+id/icon_suhu_udara"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="45sp"
+                        android:src="@drawable/cold" />
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/kelembapan_udara_card"
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:layout_marginTop="6dp"
+                        android:layout_below="@+id/suhu_udara_card"
+                        android:padding="1dp"
+                        app:cardCornerRadius="@dimen/card_corner">
+
+                        <TextView
+                            android:id="@+id/kelembapan_udara"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="5dp"
+                            android:textColor="@color/bgcolor"
+                            android:textSize="20sp"
+                            android:fontFamily="@font/opensanslight"
+                            android:text="Kelembapan Udara" />
+
+                        <TextView
+                            android:id="@+id/nilai_kelembapan_udara"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margintop_text_nilai"
+                            android:layout_marginLeft="@dimen/marginleft_text_nilai"
+                            android:fontFamily="@font/opensanslight"
+                            android:gravity="center"
+                            android:textColor="@color/bgcolor"
+                            android:textSize="@dimen/size_text_nilai"
+                            android:text="@string/nilai_kelembapan_udara" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="270dp"
+                            android:layout_marginTop="@dimen/margintop_text_nilai"
+                            android:fontFamily="@font/opensanslight"
+                            android:gravity="top"
+                            android:textColor="@color/bgcolor"
+                            android:textSize="@dimen/size_text_nilai"
+                            android:text="@string/persen" />
+
+
+                        <ImageView
+                            android:id="@+id/icon_kelembapan_udara"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="45sp"
+                            android:src="@drawable/air_humidity" />
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/ph_card"
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:layout_marginTop="6dp"
+                        android:layout_below="@+id/kelembapan_udara_card"
+                        android:padding="1dp"
+                        app:cardCornerRadius="@dimen/card_corner">
+
+                    <TextView
+                        android:id="@+id/ph_tanah"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="5dp"
+                        android:textColor="@color/bgcolor"
+                        android:textSize="20sp"
+                        android:fontFamily="@font/opensanslight"
+                        android:text="@string/ph_tanah" />
+
+                    <TextView
+                        android:id="@+id/nilai_ph_tanah"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margintop_text_nilai"
+                        android:layout_marginLeft="@dimen/marginleft_text_nilai"
+                        android:fontFamily="@font/opensanslight"
+                        android:gravity="center"
+                        android:textColor="@color/bgcolor"
+                        android:textSize="@dimen/size_text_nilai"
+                        android:text="@string/nilai_ph" />
+
+                        <ImageView
+                            android:id="@+id/icon_ph_tanah"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="45sp"
+                            android:src="@drawable/soil_ph" />
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/kelembapan_tanah_card"
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:layout_marginTop="6dp"
+                        android:layout_below="@+id/ph_card"
+                        android:padding="1dp"
+                        app:cardCornerRadius="@dimen/card_corner">
+                    <TextView
+                        android:id="@+id/kelembapan_tanah"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="5dp"
+                        android:textColor="@color/bgcolor"
+                        android:textSize="20sp"
+                        android:fontFamily="@font/opensanslight"
+                        android:text="Kelembapan Tanah" />
+
+                    <TextView
+                        android:id="@+id/nilai_kelembapan_tanah"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margintop_text_nilai"
+                        android:layout_marginLeft="@dimen/marginleft_text_nilai"
+                        android:fontFamily="@font/opensanslight"
+                        android:gravity="center"
+                        android:textColor="@color/bgcolor"
+                        android:textSize="@dimen/size_text_nilai"
+                        android:text="@string/nilai_kelembapan_tanah"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="270dp"
+                        android:layout_marginTop="@dimen/margintop_text_nilai"
+                        android:fontFamily="@font/opensanslight"
+                        android:gravity="top"
+                        android:textColor="@color/bgcolor"
+                        android:textSize="@dimen/size_text_nilai"
+                        android:text="@string/persen" />
+
+                    <ImageView
+                        android:id="@+id/icon_kelembapan_tanah"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="45sp"
+                        android:src="@drawable/soil_humidity" />
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/volume_card"
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:layout_marginTop="6dp"
+                        android:layout_below="@+id/kelembapan_tanah_card"
+                        android:padding="1dp"
+                        app:cardCornerRadius="@dimen/card_corner">
+
+                        <ImageView
+                            android:id="@+id/icon_volume_air"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="45sp"
+                            android:src="@drawable/water_level" />
+                    <TextView
+                        android:id="@+id/volume_air"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="5dp"
+                        android:textColor="@color/bgcolor"
+                        android:textSize="20sp"
+                        android:fontFamily="@font/opensanslight"
+                        android:text="Volume Air" />
+
+                    <TextView
+                        android:id="@+id/nilai_volume_air"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margintop_text_nilai"
+                        android:layout_marginLeft="@dimen/marginleft_text_nilai"
+                        android:fontFamily="@font/opensanslight"
+                        android:gravity="center"
+                        android:textColor="@color/bgcolor"
+                        android:textSize="@dimen/size_text_nilai"
+                        android:text="@string/nilai_volume"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="270dp"
+                        android:layout_marginTop="@dimen/margintop_text_nilai"
+                        android:fontFamily="@font/opensanslight"
+                        android:gravity="top"
+                        android:textColor="@color/bgcolor"
+                        android:textSize="@dimen/size_text_nilai"
+                        android:text="@string/persen"/>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/suhu_air_card"
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginBottom="40dp"
+                        android:layout_below="@+id/volume_card"
+                        android:padding="1dp"
+                        app:cardCornerRadius="@dimen/card_corner">
+                    <ImageView
+                        android:id="@+id/icon_suhu_air"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="45sp"
+                        android:src="@drawable/water_temp" />
+
+                    <TextView
+                        android:id="@+id/suhu_air"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="5dp"
+                        android:textColor="@color/bgcolor"
+                        android:textSize="20sp"
+                        android:fontFamily="@font/opensanslight"
+                        android:text="Suhu Air" />
+
+                    <TextView
+                        android:id="@+id/nilai_suhu_air"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margintop_text_nilai"
+                        android:layout_marginLeft="@dimen/marginleft_text_nilai"
+                        android:fontFamily="@font/opensanslight"
+                        android:gravity="center"
+                        android:textColor="@color/bgcolor"
+                        android:textSize="@dimen/size_text_nilai"
+                        android:text="@string/nilai_suhu_air"/>
+
+                    <TextView
+                        android:id="@+id/satuan_suhu_air"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="270dp"
+                        android:layout_marginTop="@dimen/margintop_text_nilai"
+                        android:fontFamily="@font/opensanslight"
+                        android:gravity="top"
+                        android:textColor="@color/bgcolor"
+                        android:textSize="@dimen/size_text_nilai"
+                        android:text="@string/derajat_celcius"  />
+
+                    </androidx.cardview.widget.CardView>
+
+                </RelativeLayout>
+
+            </HorizontalScrollView>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/footer"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:padding="10dp"
+        app:cardPreventCornerOverlap="true"
+        app:cardCornerRadius="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:orientation="horizontal"
+            android:weightSum="4"
+            >
+
+            <Button
+                android:id="@+id/btn_siram"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="Siram"
+                android:fontFamily="@font/opensanssemibold"
+                android:textColor="@color/white"
+                android:layout_gravity="center"
+                android:layout_marginLeft="3dp"
+                android:textSize="20sp"
+                android:background="@drawable/btn_rounded"
+                />
+            <Button
+                android:id="@+id/btn_stop"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="STOP"
+                android:fontFamily="@font/opensanssemibold"
+                android:textColor="@color/white"
+                android:layout_gravity="center"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="3dp"
+                android:textSize="20sp"
+                android:background="@drawable/red_rounded"
+                />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+    <LinearLayout
+        android:id="@+id/timer"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="50dp"
+        android:layout_above="@+id/footer"
+        android:padding="10dp"
+        android:background="@color/white"
+        android:visibility="invisible">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/transparent">
+
+            <TextView
+                android:text="Menyiram Selama :"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:paddingRight="20dp"
+                android:id="@+id/menyiram"
+                android:textSize="15dp"
+                android:fontFamily="@font/opensanslight"
+                android:textColor="@color/softblue" />
+            <TextView
+                android:text="00:00:00"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="20dp"
+                android:fontFamily="@font/opensanslight"
+                android:id="@+id/timertext"
+                android:textSize="40dp"
+                android:textColor="@color/softblue" />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>
